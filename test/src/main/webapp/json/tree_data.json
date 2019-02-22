@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "text": "图书管理",
+    "state": "closed",
+    "iconCls": "icon-book",
+    "children": [
+      {
+        "id": 11,
+        "text": "查询图书信息",
+        "attributes": {"url": "query_book.html"}
+      },
+      {
+        "id": 12,
+        "text": "查询图书列表",
+        "attributes": { "url": "book_list.html"}
+      },
+      {
+        "id": 13,
+        "text": "查询图书分类",
+        "attributes": {"url": "book_category.html"}
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "借阅证管理",
+    "state": "closed",
+    "iconCls": "icon-card",
+    "children": [
+      {
+        "id": 21,
+        "text": "新办借阅证",
+        "attributes": {"url": "add_card.html"}
+      },
+      {
+        "id": 22,
+        "text": "查询借阅证信息",
+        "attributes": {"url": "query_card.html"}
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "图书借还",
+    "state": "closed",
+    "iconCls": "icon-deal",
+    "children": [
+      {
+        "id": 31,
+        "text": "借阅图书",
+        "attributes": {"url": "borrow_book.html"}
+      },
+      {
+        "id": 32,
+        "text": "归还图书",
+        "attributes": {"url": "return_book.html"}
+      },
+      {
+        "id": 33,
+        "text": "查询借阅记录",
+        "attributes": { "url": "borrow_record.html"}
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "text": "库存管理",
+    "state": "closed",
+    "iconCls": "icon-stock",
+    "children": [
+      {
+        "id": 41,
+        "text": "图书入库",
+        "attributes": {"url": "book_in.html"}
+      },
+      {
+        "id": 42,
+        "text": "图书出库",
+        "attributes": {"url": "book_out.html"}
+      },
+      {
+        "id": 43,
+        "text": "出入记录",
+        "attributes": {"url": "io_record.html"}
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "text": "系统设置",
+    "state": "closed",
+    "iconCls": "icon-settings",
+    "children": [
+      {
+        "id": 51,
+        "text": "管理员设置",
+        "attributes": {"url": "admin_set.html"}
+      },
+      {
+        "id": 52,
+        "text": "操作记录查询",
+        "attributes": {"url": "operation_record.html" }
+      },
+      {
+        "id": 53,
+        "text": "修改密码",
+        "attributes": {"url": "edit_pwd.html" }
+      }
+    ]
+  }
+]
