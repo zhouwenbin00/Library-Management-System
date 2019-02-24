@@ -47,13 +47,13 @@
         </javaClientGenerator>
 
         <!-- 指定数据表 -->
-        <table tableName="tb_user" domainObjectName="User"></table>
-        <table tableName="tb_role" domainObjectName="Role"></table>
-        <table tableName="tb_record" domainObjectName="Record"></table>
-        <table tableName="tb_book" domainObjectName="Book"></table>
-        <table tableName="tb_reader" domainObjectName="Reader"></table>
-        <table tableName="tb_category" domainObjectName="Category"></table>
-        <table tableName="tb_authority" domainObjectName="Authority"></table>
+        <table tableName="tb_user" domainObjectName="TbUser"></table>
+        <table tableName="tb_role" domainObjectName="TbRole"></table>
+        <table tableName="tb_record" domainObjectName="TbRecord"></table>
+        <table tableName="tb_book" domainObjectName="TbBook"></table>
+        <table tableName="tb_reader" domainObjectName="RbReader"></table>
+        <table tableName="tb_category" domainObjectName="TbCategory"></table>
+        <table tableName="tb_authority" domainObjectName="TbAuthority"></table>
 
 
         <!-- 有些表的字段需要指定java类型

@@ -11,5 +11,4 @@
     <typeAliases>
         <package name="cn.test.lms.bean" />
     </typeAliases>
-
 </configuration>
