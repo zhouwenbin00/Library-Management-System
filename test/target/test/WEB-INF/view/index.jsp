@@ -56,18 +56,20 @@
         lines: true,
         /*点击新增选项卡*/
         onClick: function (node) {
-            var tabs = $('#tabs');
-            var tab = tabs.tabs("getTab", node.text);
-            if (tab) {
-                /*有则选中该选项卡*/
-                tabs.tabs("select", node.text)
-            } else
-            /*没有则创建该选项卡*/
-                tabs.tabs('add', {
-                    title: node.text,
-                    href: node.attributes.url,
-                    closable: true
-                });
+            if($('#menu').tree("isLeaf",node.target)) {
+                var tabs = $('#tabs');
+                var tab = tabs.tabs("getTab", node.text);
+                if (tab) {
+                    /*有则选中该选项卡*/
+                    tabs.tabs("select", node.text)
+                } else
+                /*没有则创建该选项卡*/
+                    tabs.tabs('add', {
+                        title: node.text,
+                        href: node.attributes.url,
+                        closable: true
+                    });
+            }
         },
         /*点击节点展开、收缩节点*/
         onSelect:function (node) {

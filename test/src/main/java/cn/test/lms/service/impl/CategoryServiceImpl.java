@@ -51,7 +51,15 @@ public class CategoryServiceImpl implements cn.test.lms.service.CategoryService 
        // 返回*数据
         return result;
     }
+    //不分页的分类列表
+    @Override
+    public List<TbCategory> getCategoryList() {
+        TbCategoryExample example = new TbCategoryExample();
+        List<TbCategory> list = mapper.selectByExample(example);
+        return list;
+    }
 
+    //批量删除分类
     @Override
     @Transactional
     public Result delCategory(Integer[] ids) {

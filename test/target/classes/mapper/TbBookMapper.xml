@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.test.lms.dao.BookMapper">
-  <resultMap id="BaseResultMap" type="cn.test.lms.bean.Book">
+<mapper namespace="cn.test.lms.dao.TbBookMapper">
+  <resultMap id="BaseResultMap" type="cn.test.lms.bean.TbBook">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="book_code" jdbcType="VARCHAR" property="bookCode" />
     <result column="book_name" jdbcType="VARCHAR" property="bookName" />
     <result column="ISBN" jdbcType="VARCHAR" property="isbn" />
     <result column="author" jdbcType="VARCHAR" property="author" />
-    <result column="category_id" jdbcType="INTEGER" property="categoryId" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
     <result column="price" jdbcType="DOUBLE" property="price" />
     <result column="press" jdbcType="VARCHAR" property="press" />
     <result column="page" jdbcType="INTEGER" property="page" />
@@ -75,10 +75,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, book_code, book_name, ISBN, author, category_id, price, press, page, total_num, 
+    id, book_code, book_name, ISBN, author, category, price, press, page, total_num, 
     left_num, register_date, position
   </sql>
-  <select id="selectByExample" parameterType="cn.test.lms.bean.BookExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.test.lms.bean.TbBookExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -102,25 +102,25 @@
     delete from tb_book
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.test.lms.bean.BookExample">
+  <delete id="deleteByExample" parameterType="cn.test.lms.bean.TbBookExample">
     delete from tb_book
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.test.lms.bean.Book">
+  <insert id="insert" parameterType="cn.test.lms.bean.TbBook">
     insert into tb_book (id, book_code, book_name, 
-      ISBN, author, category_id, 
+      ISBN, author, category, 
       price, press, page, 
       total_num, left_num, register_date, 
       position)
     values (#{id,jdbcType=INTEGER}, #{bookCode,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, 
-      #{isbn,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{categoryId,jdbcType=INTEGER}, 
+      #{isbn,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, 
       #{price,jdbcType=DOUBLE}, #{press,jdbcType=VARCHAR}, #{page,jdbcType=INTEGER}, 
       #{totalNum,jdbcType=INTEGER}, #{leftNum,jdbcType=INTEGER}, #{registerDate,jdbcType=DATE}, 
       #{position,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.test.lms.bean.Book">
+  <insert id="insertSelective" parameterType="cn.test.lms.bean.TbBook">
     insert into tb_book
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -138,8 +138,8 @@
       <if test="author != null">
         author,
       </if>
-      <if test="categoryId != null">
-        category_id,
+      <if test="category != null">
+        category,
       </if>
       <if test="price != null">
         price,
@@ -179,8 +179,8 @@
       <if test="author != null">
         #{author,jdbcType=VARCHAR},
       </if>
-      <if test="categoryId != null">
-        #{categoryId,jdbcType=INTEGER},
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
         #{price,jdbcType=DOUBLE},
@@ -205,7 +205,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.test.lms.bean.BookExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cn.test.lms.bean.TbBookExample" resultType="java.lang.Long">
     select count(*) from tb_book
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -229,8 +229,8 @@
       <if test="record.author != null">
         author = #{record.author,jdbcType=VARCHAR},
       </if>
-      <if test="record.categoryId != null">
-        category_id = #{record.categoryId,jdbcType=INTEGER},
+      <if test="record.category != null">
+        category = #{record.category,jdbcType=VARCHAR},
       </if>
       <if test="record.price != null">
         price = #{record.price,jdbcType=DOUBLE},
@@ -265,7 +265,7 @@
       book_name = #{record.bookName,jdbcType=VARCHAR},
       ISBN = #{record.isbn,jdbcType=VARCHAR},
       author = #{record.author,jdbcType=VARCHAR},
-      category_id = #{record.categoryId,jdbcType=INTEGER},
+      category = #{record.category,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=DOUBLE},
       press = #{record.press,jdbcType=VARCHAR},
       page = #{record.page,jdbcType=INTEGER},
@@ -277,7 +277,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.test.lms.bean.Book">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.test.lms.bean.TbBook">
     update tb_book
     <set>
       <if test="bookCode != null">
@@ -292,8 +292,8 @@
       <if test="author != null">
         author = #{author,jdbcType=VARCHAR},
       </if>
-      <if test="categoryId != null">
-        category_id = #{categoryId,jdbcType=INTEGER},
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
         price = #{price,jdbcType=DOUBLE},
@@ -319,13 +319,13 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.test.lms.bean.Book">
+  <update id="updateByPrimaryKey" parameterType="cn.test.lms.bean.TbBook">
     update tb_book
     set book_code = #{bookCode,jdbcType=VARCHAR},
       book_name = #{bookName,jdbcType=VARCHAR},
       ISBN = #{isbn,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
-      category_id = #{categoryId,jdbcType=INTEGER},
+      category = #{category,jdbcType=VARCHAR},
       price = #{price,jdbcType=DOUBLE},
       press = #{press,jdbcType=VARCHAR},
       page = #{page,jdbcType=INTEGER},
@@ -335,4 +335,30 @@
       position = #{position,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <!--自己写的查询-->
+  <select id="selectByCondition" resultMap="BaseResultMap">
+  select *
+    from(select * from tb_book where 1=1
+    <if test="book_category!=null">
+      and  category=#{book_category,jdbcType=VARCHAR}
+    </if>
+    <if test="book_press!=null">
+      and  press=#{book_press,jdbcType=VARCHAR}
+    </if>
+    <if test="book_position!=null">
+      and  position=#{book_position,jdbcType=VARCHAR}
+    </if>
+    ) as b
+    Where 1=1
+    <if test="keyWord!=null">
+    and
+      b.book_code LIKE '%${keyWord}%'OR
+      b.book_name LIKE '%${keyWord}%' OR
+      b.ISBN LIKE '%${keyWord}%' OR
+      b.author LIKE '%${keyWord}%' OR
+       b.category LIKE '%${keyWord}%'  OR
+      b.press LIKE '%${keyWord}%' OR
+      b.position LIKE '%${keyWord}%'
+  </if>
+  </select>
 </mapper>

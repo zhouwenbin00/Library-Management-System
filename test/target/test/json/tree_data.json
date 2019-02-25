@@ -8,12 +8,12 @@
       {
         "id": 11,
         "text": "新增图书",
-        "attributes": {"url": "addBook"}
+        "attributes": {"url": "add_Book"}
       },
       {
         "id": 12,
         "text": "图书列表",
-        "attributes": { "url": "book_list.html"}
+        "attributes": { "url": "book_list"}
       },
       {
         "id": 14,

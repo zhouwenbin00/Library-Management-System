@@ -10,7 +10,7 @@
     <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="college" jdbcType="VARCHAR" property="college" />
     <result column="balance" jdbcType="DOUBLE" property="balance" />
-    <result column="class" jdbcType="INTEGER" property="class" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
     <result column="borrow_time" jdbcType="INTEGER" property="borrowTime" />
     <result column="register_date" jdbcType="DATE" property="registerDate" />
     <result column="validity_date" jdbcType="DATE" property="validityDate" />
@@ -74,7 +74,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, reader_name, reader_num, sex, tel, status, college, balance, class, borrow_time, 
+    id, reader_name, reader_num, sex, tel, status, college, balance, grade, borrow_time, 
     register_date, validity_date
   </sql>
   <select id="selectByExample" parameterType="cn.test.lms.bean.RbReaderExample" resultMap="BaseResultMap">
@@ -110,11 +110,11 @@
   <insert id="insert" parameterType="cn.test.lms.bean.RbReader">
     insert into tb_reader (id, reader_name, reader_num, 
       sex, tel, status, college, 
-      balance, class, borrow_time, 
+      balance, grade, borrow_time, 
       register_date, validity_date)
     values (#{id,jdbcType=INTEGER}, #{readerName,jdbcType=VARCHAR}, #{readerNum,jdbcType=VARCHAR}, 
       #{sex,jdbcType=VARCHAR}, #{tel,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{college,jdbcType=VARCHAR}, 
-      #{balance,jdbcType=DOUBLE}, #{class,jdbcType=INTEGER}, #{borrowTime,jdbcType=INTEGER}, 
+      #{balance,jdbcType=DOUBLE}, #{grade,jdbcType=INTEGER}, #{borrowTime,jdbcType=INTEGER}, 
       #{registerDate,jdbcType=DATE}, #{validityDate,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="cn.test.lms.bean.RbReader">
@@ -144,8 +144,8 @@
       <if test="balance != null">
         balance,
       </if>
-      <if test="class != null">
-        class,
+      <if test="grade != null">
+        grade,
       </if>
       <if test="borrowTime != null">
         borrow_time,
@@ -182,8 +182,8 @@
       <if test="balance != null">
         #{balance,jdbcType=DOUBLE},
       </if>
-      <if test="class != null">
-        #{class,jdbcType=INTEGER},
+      <if test="grade != null">
+        #{grade,jdbcType=INTEGER},
       </if>
       <if test="borrowTime != null">
         #{borrowTime,jdbcType=INTEGER},
@@ -229,8 +229,8 @@
       <if test="record.balance != null">
         balance = #{record.balance,jdbcType=DOUBLE},
       </if>
-      <if test="record.class != null">
-        class = #{record.class,jdbcType=INTEGER},
+      <if test="record.grade != null">
+        grade = #{record.grade,jdbcType=INTEGER},
       </if>
       <if test="record.borrowTime != null">
         borrow_time = #{record.borrowTime,jdbcType=INTEGER},
@@ -256,7 +256,7 @@
       status = #{record.status,jdbcType=VARCHAR},
       college = #{record.college,jdbcType=VARCHAR},
       balance = #{record.balance,jdbcType=DOUBLE},
-      class = #{record.class,jdbcType=INTEGER},
+      grade = #{record.grade,jdbcType=INTEGER},
       borrow_time = #{record.borrowTime,jdbcType=INTEGER},
       register_date = #{record.registerDate,jdbcType=DATE},
       validity_date = #{record.validityDate,jdbcType=DATE}
@@ -288,8 +288,8 @@
       <if test="balance != null">
         balance = #{balance,jdbcType=DOUBLE},
       </if>
-      <if test="class != null">
-        class = #{class,jdbcType=INTEGER},
+      <if test="grade != null">
+        grade = #{grade,jdbcType=INTEGER},
       </if>
       <if test="borrowTime != null">
         borrow_time = #{borrowTime,jdbcType=INTEGER},
@@ -312,7 +312,7 @@
       status = #{status,jdbcType=VARCHAR},
       college = #{college,jdbcType=VARCHAR},
       balance = #{balance,jdbcType=DOUBLE},
-      class = #{class,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=INTEGER},
       borrow_time = #{borrowTime,jdbcType=INTEGER},
       register_date = #{registerDate,jdbcType=DATE},
       validity_date = #{validityDate,jdbcType=DATE}
