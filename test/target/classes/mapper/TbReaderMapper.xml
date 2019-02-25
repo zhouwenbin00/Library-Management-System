@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.test.lms.dao.RbReaderMapper">
-  <resultMap id="BaseResultMap" type="cn.test.lms.bean.RbReader">
+<mapper namespace="cn.test.lms.dao.TbReaderMapper">
+  <resultMap id="BaseResultMap" type="cn.test.lms.bean.TbReader">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="reader_name" jdbcType="VARCHAR" property="readerName" />
     <result column="reader_num" jdbcType="VARCHAR" property="readerNum" />
@@ -77,7 +77,7 @@
     id, reader_name, reader_num, sex, tel, status, college, balance, grade, borrow_time, 
     register_date, validity_date
   </sql>
-  <select id="selectByExample" parameterType="cn.test.lms.bean.RbReaderExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.test.lms.bean.TbReaderExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -101,13 +101,13 @@
     delete from tb_reader
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.test.lms.bean.RbReaderExample">
+  <delete id="deleteByExample" parameterType="cn.test.lms.bean.TbReaderExample">
     delete from tb_reader
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.test.lms.bean.RbReader">
+  <insert id="insert" parameterType="cn.test.lms.bean.TbReader">
     insert into tb_reader (id, reader_name, reader_num, 
       sex, tel, status, college, 
       balance, grade, borrow_time, 
@@ -117,7 +117,7 @@
       #{balance,jdbcType=DOUBLE}, #{grade,jdbcType=INTEGER}, #{borrowTime,jdbcType=INTEGER}, 
       #{registerDate,jdbcType=DATE}, #{validityDate,jdbcType=DATE})
   </insert>
-  <insert id="insertSelective" parameterType="cn.test.lms.bean.RbReader">
+  <insert id="insertSelective" parameterType="cn.test.lms.bean.TbReader">
     insert into tb_reader
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -196,7 +196,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.test.lms.bean.RbReaderExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="cn.test.lms.bean.TbReaderExample" resultType="java.lang.Long">
     select count(*) from tb_reader
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -264,7 +264,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.test.lms.bean.RbReader">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.test.lms.bean.TbReader">
     update tb_reader
     <set>
       <if test="readerName != null">
@@ -303,7 +303,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.test.lms.bean.RbReader">
+  <update id="updateByPrimaryKey" parameterType="cn.test.lms.bean.TbReader">
     update tb_reader
     set reader_name = #{readerName,jdbcType=VARCHAR},
       reader_num = #{readerNum,jdbcType=VARCHAR},

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="js/jquery-easyui-1.7.0/themes/default/easyui.css">
     <link rel="stylesheet" href="js/jquery-easyui-1.7.0/themes/icon.css">
     <script src="js/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="../../css/lms.css">
 </head>
 <body>
 <div id="layoutID" class="easyui-layout" data-options="fit:true" style="background: #E6EEF8;">

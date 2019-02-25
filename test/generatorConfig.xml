@@ -35,7 +35,7 @@
         </javaModelGenerator>
 
         <!-- targetProject：mapper映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resources">
+        <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resource">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
@@ -50,8 +50,8 @@
         <!--<table tableName="tb_user" domainObjectName="TbUser"></table>-->
         <!--<table tableName="tb_role" domainObjectName="TbRole"></table>-->
         <!--<table tableName="tb_record" domainObjectName="TbRecord"></table>-->
-        <!--<table tableName="tb_book" domainObjectName="TbBook"></table>-->
-        <!--<table tableName="tb_reader" domainObjectName="RbReader"></table>-->
+        <table tableName="tb_book" domainObjectName="TbBook"></table>
+        <!--<table tableName="tb_reader" domainObjectName="TbReader"></table>-->
         <!--<table tableName="tb_category" domainObjectName="TbCategory"></table>-->
         <!--<table tableName="tb_authority" domainObjectName="TbAuthority"></table>-->
 

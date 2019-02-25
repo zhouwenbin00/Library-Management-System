@@ -16,4 +16,8 @@ public interface BookService {
     Result savelBook(TbBook book);
 
     EasyUIDataGridResult searchlBook(String keyWord, String book_category, String book_press, String book_position);
+
+    TbBook searchByBookCode(String book_code);
+
+    EasyUIDataGridResult getBookRankingList(Integer page, Integer rows);
 }

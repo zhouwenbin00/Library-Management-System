@@ -54,7 +54,7 @@
                 <tr>
                     <td>分类:</td>
                     <td>
-                        <input class="easyui-combobox" name="category" data-options="url:'category/combobox',method:'POST',valueField:'category',textField:'category',prompt:'请选择分类'">
+                        <input class="easyui-combobox" name="category" data-options="url:'category/combobox',method:'POST',valueField:'category',textField:'category',prompt:'请选择分类',panelHeight:'auto'">
                     </td>
                 </tr>
                 <tr>

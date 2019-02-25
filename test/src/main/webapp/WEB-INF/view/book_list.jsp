@@ -21,15 +21,22 @@
             <th data-options="width:80, field:'bookCode',align:'center',editor:'textbox'">图书编号</th>
             <th data-options="width:80, field:'bookName',align:'center',editor:'textbox'">图书名称</th>
             <th data-options="width:80, field:'author',align:'center',editor:'textbox'">作者</th>
-            <th data-options="width:80, field:'category',align:'center',editor:{type:'combobox',options:{
-                  alueField:'category',textField:'category',method:'post',url:'category/combobox' }}">分类
+            <th data-options="width:80, field:'category',align:'center',editor:{
+                                type:'combobox',options:{
+                                valueField:'category',
+                                textField:'category',
+                                method:'post',
+                                panelHeight:'auto',
+                                url:'category/combobox'
+                         }
+             }">分类
             </th>
             <th data-options="width:80, field:'isbn',align:'center',editor:'textbox'">ISBN</th>
             <th data-options="width:80, field:'press',align:'center',editor:'textbox'">出版社</th>
             <th data-options="width:80, field:'page',align:'center',editor:'numberbox'">总页数</th>
             <th data-options="width:80, field:'price',align:'center',editor:'numberbox'">价格</th>
             <th data-options="width:80, field:'totalNum',align:'center',editor:'numberbox'">馆藏数量</th>
-            <th data-options="width:80, field:'leftNum',align:'center',editor:'numberbox'">在馆数量</th>
+            <th data-options="width:80, field:'borrowTime',align:'center'">借出次数</th>
             <!-- 时间日期格式化 -->
             <th data-options="width:80, field:'registerDate',align:'center',formatter:function (value) {
                     if (value == undefined) {
@@ -55,7 +62,7 @@
                     $.messager.alert('提示','请先结束编辑!');
                 }
                 if(editRow == undefined){
-                    $('#tabs').tabs('add', {title: '新增图书',href: 'add_Book',closable: true});
+                    $('#tabs').tabs('add', {title: '新增图书',href: 'add_book',closable: true});
                 }
             }">添加</a>
 
@@ -139,7 +146,7 @@
             </span>
             <span>图书分类：
                 <input class="easyui-combobox" name="category" id="book_category"
-                       data-options="url:'category/combobox',method:'POST',valueField:'category',textField:'category',prompt:'请选择分类'">
+                       data-options="url:'category/combobox',method:'POST',valueField:'category',textField:'category',prompt:'请选择分类',panelHeight:'auto'">
 	        </span>
             <span>
                 出版社:

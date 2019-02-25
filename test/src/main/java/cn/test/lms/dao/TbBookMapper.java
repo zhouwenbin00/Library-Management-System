@@ -28,6 +28,5 @@ public interface TbBookMapper {
 
     int updateByPrimaryKey(TbBook record);
 
-    List<TbBook> selectByCondition(@Param("keyWord") String keyWord, @Param("book_category")String book_category,
-                                   @Param("book_press") String book_press, @Param("book_position")String book_position);
+    List<TbBook> selectByCondition(@Param("keyWord")String keyWord, @Param("book_category")String book_category, @Param("book_press")String book_press, @Param("book_position")String book_position);
 }

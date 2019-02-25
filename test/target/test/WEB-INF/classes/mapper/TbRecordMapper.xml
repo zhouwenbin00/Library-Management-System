@@ -5,6 +5,7 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="book_num" jdbcType="VARCHAR" property="bookNum" />
     <result column="book_name" jdbcType="VARCHAR" property="bookName" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
     <result column="reader_name" jdbcType="VARCHAR" property="readerName" />
     <result column="borrow_date" jdbcType="DATE" property="borrowDate" />
     <result column="return_date" jdbcType="DATE" property="returnDate" />
@@ -73,8 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, book_num, book_name, reader_name, borrow_date, return_date, status, rent, borrows_days, 
-    over_days, over_rent
+    id, book_num, book_name, grade, reader_name, borrow_date, return_date, status, rent, 
+    borrows_days, over_days, over_rent
   </sql>
   <select id="selectByExample" parameterType="cn.test.lms.bean.TbRecordExample" resultMap="BaseResultMap">
     select
@@ -108,15 +109,17 @@
   </delete>
   <insert id="insert" parameterType="cn.test.lms.bean.TbRecord">
     insert into tb_record (id, book_num, book_name, 
-      reader_name, borrow_date, return_date, 
-      status, rent, borrows_days, 
-      over_days, over_rent)
+      grade, reader_name, borrow_date, 
+      return_date, status, rent, 
+      borrows_days, over_days, over_rent
+      )
     values (#{id,jdbcType=INTEGER}, #{bookNum,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, 
-      #{readerName,jdbcType=VARCHAR}, #{borrowDate,jdbcType=DATE}, #{returnDate,jdbcType=DATE}, 
-      #{status,jdbcType=VARCHAR}, #{rent,jdbcType=DOUBLE}, #{borrowsDays,jdbcType=INTEGER}, 
-      #{overDays,jdbcType=INTEGER}, #{overRent,jdbcType=DOUBLE})
+      #{grade,jdbcType=INTEGER}, #{readerName,jdbcType=VARCHAR}, #{borrowDate,jdbcType=DATE}, 
+      #{returnDate,jdbcType=DATE}, #{status,jdbcType=VARCHAR}, #{rent,jdbcType=DOUBLE}, 
+      #{borrowsDays,jdbcType=INTEGER}, #{overDays,jdbcType=INTEGER}, #{overRent,jdbcType=DOUBLE}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="cn.test.lms.bean.TbRecord">
+  <insert id="insertSelective" parameterType="cn.test.lms.bean.TbRecord" useGeneratedKeys="true" keyProperty="id">
     insert into tb_record
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -127,6 +130,9 @@
       </if>
       <if test="bookName != null">
         book_name,
+      </if>
+      <if test="grade != null">
+        grade,
       </if>
       <if test="readerName != null">
         reader_name,
@@ -162,6 +168,9 @@
       </if>
       <if test="bookName != null">
         #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=INTEGER},
       </if>
       <if test="readerName != null">
         #{readerName,jdbcType=VARCHAR},
@@ -207,6 +216,9 @@
       <if test="record.bookName != null">
         book_name = #{record.bookName,jdbcType=VARCHAR},
       </if>
+      <if test="record.grade != null">
+        grade = #{record.grade,jdbcType=INTEGER},
+      </if>
       <if test="record.readerName != null">
         reader_name = #{record.readerName,jdbcType=VARCHAR},
       </if>
@@ -241,6 +253,7 @@
     set id = #{record.id,jdbcType=INTEGER},
       book_num = #{record.bookNum,jdbcType=VARCHAR},
       book_name = #{record.bookName,jdbcType=VARCHAR},
+      grade = #{record.grade,jdbcType=INTEGER},
       reader_name = #{record.readerName,jdbcType=VARCHAR},
       borrow_date = #{record.borrowDate,jdbcType=DATE},
       return_date = #{record.returnDate,jdbcType=DATE},
@@ -261,6 +274,9 @@
       </if>
       <if test="bookName != null">
         book_name = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null">
+        grade = #{grade,jdbcType=INTEGER},
       </if>
       <if test="readerName != null">
         reader_name = #{readerName,jdbcType=VARCHAR},
@@ -293,6 +309,7 @@
     update tb_record
     set book_num = #{bookNum,jdbcType=VARCHAR},
       book_name = #{bookName,jdbcType=VARCHAR},
+      grade = #{grade,jdbcType=INTEGER},
       reader_name = #{readerName,jdbcType=VARCHAR},
       borrow_date = #{borrowDate,jdbcType=DATE},
       return_date = #{returnDate,jdbcType=DATE},

@@ -21,7 +21,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public Result addBook(TbBook book) {
         //补充数据
-        book.setLeftNum(book.getTotalNum());
+        book.setBorrowTime(book.getTotalNum());
         book.setRegisterDate(new Date());
         //选择性插入
         int rows = mapper.insertSelective(book);
@@ -85,6 +85,41 @@ public class BookServiceImpl implements BookService {
         EasyUIDataGridResult result = new EasyUIDataGridResult();
         result.setRows(info.getList());
         result.setTotal((int)info.getTotal());
+        return result;
+    }
+
+    @Override
+    public TbBook searchByBookCode(String book_code) {
+        if (book_code!=null&&book_code!=""){
+            TbBookExample example = new TbBookExample();
+            TbBookExample.Criteria criteria = example.createCriteria();
+            criteria.andBookCodeEqualTo(book_code);
+            List<TbBook> list = mapper.selectByExample(example);
+            for (TbBook book:list
+            ) {
+                return book;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public EasyUIDataGridResult getBookRankingList(Integer page, Integer rows) {
+        //判断非空
+        if (page ==null)page = 1;
+        if (rows == null)rows  = 10;
+        // 设置pageHelper
+        PageHelper.startPage(page,rows);
+        TbBookExample example = new TbBookExample();
+        example.setOrderByClause("borrow_time DESC ,id DESC");
+        List<TbBook> list = mapper.selectByExample(example);
+        PageInfo<TbBook> info = new PageInfo<>(list);
+        //封装数据
+        EasyUIDataGridResult result = new EasyUIDataGridResult();
+//        result.setRows(list);
+        result.setRows(info.getList());
+        result.setTotal((int)info.getTotal());
+        // 返回*数据
         return result;
     }
 }

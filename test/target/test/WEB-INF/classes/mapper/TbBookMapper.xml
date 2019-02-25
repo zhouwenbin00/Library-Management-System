@@ -12,7 +12,7 @@
     <result column="press" jdbcType="VARCHAR" property="press" />
     <result column="page" jdbcType="INTEGER" property="page" />
     <result column="total_num" jdbcType="INTEGER" property="totalNum" />
-    <result column="left_num" jdbcType="INTEGER" property="leftNum" />
+    <result column="borrow_time" jdbcType="INTEGER" property="borrowTime" />
     <result column="register_date" jdbcType="DATE" property="registerDate" />
     <result column="position" jdbcType="VARCHAR" property="position" />
   </resultMap>
@@ -76,7 +76,7 @@
   </sql>
   <sql id="Base_Column_List">
     id, book_code, book_name, ISBN, author, category, price, press, page, total_num, 
-    left_num, register_date, position
+    borrow_time, register_date, position
   </sql>
   <select id="selectByExample" parameterType="cn.test.lms.bean.TbBookExample" resultMap="BaseResultMap">
     select
@@ -112,12 +112,12 @@
     insert into tb_book (id, book_code, book_name, 
       ISBN, author, category, 
       price, press, page, 
-      total_num, left_num, register_date, 
+      total_num, borrow_time, register_date, 
       position)
     values (#{id,jdbcType=INTEGER}, #{bookCode,jdbcType=VARCHAR}, #{bookName,jdbcType=VARCHAR}, 
       #{isbn,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, 
       #{price,jdbcType=DOUBLE}, #{press,jdbcType=VARCHAR}, #{page,jdbcType=INTEGER}, 
-      #{totalNum,jdbcType=INTEGER}, #{leftNum,jdbcType=INTEGER}, #{registerDate,jdbcType=DATE}, 
+      #{totalNum,jdbcType=INTEGER}, #{borrowTime,jdbcType=INTEGER}, #{registerDate,jdbcType=DATE}, 
       #{position,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.test.lms.bean.TbBook">
@@ -153,8 +153,8 @@
       <if test="totalNum != null">
         total_num,
       </if>
-      <if test="leftNum != null">
-        left_num,
+      <if test="borrowTime != null">
+        borrow_time,
       </if>
       <if test="registerDate != null">
         register_date,
@@ -194,8 +194,8 @@
       <if test="totalNum != null">
         #{totalNum,jdbcType=INTEGER},
       </if>
-      <if test="leftNum != null">
-        #{leftNum,jdbcType=INTEGER},
+      <if test="borrowTime != null">
+        #{borrowTime,jdbcType=INTEGER},
       </if>
       <if test="registerDate != null">
         #{registerDate,jdbcType=DATE},
@@ -244,8 +244,8 @@
       <if test="record.totalNum != null">
         total_num = #{record.totalNum,jdbcType=INTEGER},
       </if>
-      <if test="record.leftNum != null">
-        left_num = #{record.leftNum,jdbcType=INTEGER},
+      <if test="record.borrowTime != null">
+        borrow_time = #{record.borrowTime,jdbcType=INTEGER},
       </if>
       <if test="record.registerDate != null">
         register_date = #{record.registerDate,jdbcType=DATE},
@@ -270,7 +270,7 @@
       press = #{record.press,jdbcType=VARCHAR},
       page = #{record.page,jdbcType=INTEGER},
       total_num = #{record.totalNum,jdbcType=INTEGER},
-      left_num = #{record.leftNum,jdbcType=INTEGER},
+      borrow_time = #{record.borrowTime,jdbcType=INTEGER},
       register_date = #{record.registerDate,jdbcType=DATE},
       position = #{record.position,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -307,8 +307,8 @@
       <if test="totalNum != null">
         total_num = #{totalNum,jdbcType=INTEGER},
       </if>
-      <if test="leftNum != null">
-        left_num = #{leftNum,jdbcType=INTEGER},
+      <if test="borrowTime != null">
+        borrow_time = #{borrowTime,jdbcType=INTEGER},
       </if>
       <if test="registerDate != null">
         register_date = #{registerDate,jdbcType=DATE},
@@ -330,14 +330,14 @@
       press = #{press,jdbcType=VARCHAR},
       page = #{page,jdbcType=INTEGER},
       total_num = #{totalNum,jdbcType=INTEGER},
-      left_num = #{leftNum,jdbcType=INTEGER},
+      borrow_time = #{borrowTime,jdbcType=INTEGER},
       register_date = #{registerDate,jdbcType=DATE},
       position = #{position,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <!--自己写的查询-->
   <select id="selectByCondition" resultMap="BaseResultMap">
-  select *
+    select *
     from(select * from tb_book where 1=1
     <if test="book_category!=null">
       and  category=#{book_category,jdbcType=VARCHAR}
@@ -351,14 +351,14 @@
     ) as b
     Where 1=1
     <if test="keyWord!=null">
-    and
+      and
       b.book_code LIKE '%${keyWord}%'OR
       b.book_name LIKE '%${keyWord}%' OR
       b.ISBN LIKE '%${keyWord}%' OR
       b.author LIKE '%${keyWord}%' OR
-       b.category LIKE '%${keyWord}%'  OR
+      b.category LIKE '%${keyWord}%'  OR
       b.press LIKE '%${keyWord}%' OR
       b.position LIKE '%${keyWord}%'
-  </if>
+    </if>
   </select>
 </mapper>

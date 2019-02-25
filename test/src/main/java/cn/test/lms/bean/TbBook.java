@@ -23,7 +23,7 @@ public class TbBook {
 
     private Integer totalNum;
 
-    private Integer leftNum;
+    private Integer borrowTime;
 
     private Date registerDate;
 
@@ -109,12 +109,12 @@ public class TbBook {
         this.totalNum = totalNum;
     }
 
-    public Integer getLeftNum() {
-        return leftNum;
+    public Integer getBorrowTime() {
+        return borrowTime;
     }
 
-    public void setLeftNum(Integer leftNum) {
-        this.leftNum = leftNum;
+    public void setBorrowTime(Integer borrowTime) {
+        this.borrowTime = borrowTime;
     }
 
     public Date getRegisterDate() {

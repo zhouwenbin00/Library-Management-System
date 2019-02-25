@@ -39,7 +39,7 @@ public class BookController {
         return service.delBook(ids);
     }
 
-    //删除图书
+    //修改图书
     @RequestMapping(value = "book/save",method = RequestMethod.POST)
     @ResponseBody
     public Result savelBook( String json){
@@ -55,5 +55,18 @@ public class BookController {
     @ResponseBody
     public EasyUIDataGridResult searchlBook( String keyWord,String book_category,String book_press ,String book_position){
         return service.searchlBook(keyWord,book_category,book_press,book_position);
+    }
+
+    //通过图书编号查询
+    @RequestMapping(value = "book/searchByBookCode",method = RequestMethod.POST)
+    @ResponseBody
+    public TbBook searchByBookCode(String book_code){
+        return service.searchByBookCode(book_code);
+    }
+    //通过图书编号查询
+    @RequestMapping(value = "book/ranking",method = RequestMethod.POST)
+    @ResponseBody
+    public EasyUIDataGridResult getBookRankingList(Integer page, Integer rows){
+        return service.getBookRankingList(page,rows);
     }
 }

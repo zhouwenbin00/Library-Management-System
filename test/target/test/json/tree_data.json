@@ -8,7 +8,7 @@
       {
         "id": 11,
         "text": "新增图书",
-        "attributes": {"url": "add_Book"}
+        "attributes": {"url": "add_book"}
       },
       {
         "id": 12,
@@ -31,17 +31,12 @@
       {
         "id": 21,
         "text": "新增读者",
-        "attributes": {"url": "add_card.html"}
+        "attributes": {"url": "add_reader"}
       },
       {
         "id": 22,
         "text": "读者列表",
-        "attributes": {"url": "query_card.html"}
-      },
-      {
-        "id": 23,
-        "text": "读者充值",
-        "attributes": {"url": "query_card.html"}
+        "attributes": {"url": "reader_list"}
       }
     ]
   },
@@ -54,17 +49,12 @@
       {
         "id": 31,
         "text": "借阅图书",
-        "attributes": {"url": "borrow_book.html"}
-      },
-      {
-        "id": 32,
-        "text": "续借图书",
-        "attributes": {"url": "return_book.html"}
+        "attributes": {"url": "borrow_book"}
       },
       {
         "id": 32,
         "text": "归还图书",
-        "attributes": {"url": "return_book.html"}
+        "attributes": {"url": "return_book"}
       }
     ]
   },
@@ -77,22 +67,22 @@
       {
         "id": 41,
         "text": "图书借阅查询",
-        "attributes": {"url": "admin_set.html"}
+        "attributes": {"url": "record_list"}
       },
       {
         "id": 41,
         "text": "图书逾期查询",
-        "attributes": {"url": "admin_set.html"}
+        "attributes": {"url": "over_record_list"}
       },
       {
         "id": 43,
         "text": "读者排行查询",
-        "attributes": {"url": "edit_pwd.html" }
+        "attributes": {"url": "reader_ranking " }
       },
       {
         "id": 43,
         "text": "热门图书查询",
-        "attributes": {"url": "edit_pwd.html" }
+        "attributes": {"url": "book_ranking" }
       }
     ]
   },

@@ -1,0 +1,12 @@
+.clearfloat:after {
+    clear:both;  //清除浮动
+    display:block;//将文本转为块级元素
+    content:"";//设置内容为空
+    visibility:hidden;//将元素隐藏
+    height:0;//高度为0
+    line-height:0;//行高为0
+}
+.clearfix {
+    overflow: auto;
+    zoom: 1;
+}

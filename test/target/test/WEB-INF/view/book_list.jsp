@@ -21,14 +21,22 @@
             <th data-options="width:80, field:'bookCode',align:'center',editor:'textbox'">图书编号</th>
             <th data-options="width:80, field:'bookName',align:'center',editor:'textbox'">图书名称</th>
             <th data-options="width:80, field:'author',align:'center',editor:'textbox'">作者</th>
-            <th data-options="width:80, field:'category',align:'center',editor:{type:'combobox',options:{
-                  alueField:'category',textField:'category',method:'post',url:'category/combobox' }}">分类</th>
+            <th data-options="width:80, field:'category',align:'center',editor:{
+                                type:'combobox',options:{
+                                valueField:'category',
+                                textField:'category',
+                                method:'post',
+                                panelHeight:'auto',
+                                url:'category/combobox'
+                         }
+             }">分类
+            </th>
             <th data-options="width:80, field:'isbn',align:'center',editor:'textbox'">ISBN</th>
             <th data-options="width:80, field:'press',align:'center',editor:'textbox'">出版社</th>
             <th data-options="width:80, field:'page',align:'center',editor:'numberbox'">总页数</th>
             <th data-options="width:80, field:'price',align:'center',editor:'numberbox'">价格</th>
             <th data-options="width:80, field:'totalNum',align:'center',editor:'numberbox'">馆藏数量</th>
-            <th data-options="width:80, field:'leftNum',align:'center',editor:'numberbox'">在馆数量</th>
+            <th data-options="width:80, field:'borrowTime',align:'center'">借出次数</th>
             <!-- 时间日期格式化 -->
             <th data-options="width:80, field:'registerDate',align:'center',formatter:function (value) {
                     if (value == undefined) {
@@ -54,7 +62,7 @@
                     $.messager.alert('提示','请先结束编辑!');
                 }
                 if(editRow == undefined){
-                    $('#tabs').tabs('add', {title: '新增图书',href: 'add_Book',closable: true});
+                    $('#tabs').tabs('add', {title: '新增图书',href: 'add_book',closable: true});
                 }
             }">添加</a>
 
@@ -138,7 +146,7 @@
             </span>
             <span>图书分类：
                 <input class="easyui-combobox" name="category" id="book_category"
-                       data-options="url:'category/combobox',method:'POST',valueField:'category',textField:'category',prompt:'请选择分类'">
+                       data-options="url:'category/combobox',method:'POST',valueField:'category',textField:'category',prompt:'请选择分类',panelHeight:'auto'">
 	        </span>
             <span>
                 出版社:
@@ -177,28 +185,28 @@
             onAfterEdit: function (rowIndex, rowData, changes) {
                 //endEdit该方法触发此事件
                 console.info(rowData);
-                var updated = $('#book_dg').datagrid('getChanges','updated');
+                var updated = $('#book_dg').datagrid('getChanges', 'updated');
                 console.log(updated[0]);
                 console.log(rowData);
                 var url = '';
                 //如果选择了修改，但实际未做任何改变，则直接返回false
-                if(updated.length==0){
+                if (updated.length == 0) {
                     editRow = undefined;
                     return false
                 }
-                if(updated.length>0){
-                    url='book/save';
+                if (updated.length > 0) {
+                    url = 'book/save';
                     // ajax提交，rowData是行数据
                     $.ajax({
                         type: 'post',
                         url: url,
-                        data: {json:JSON.stringify(rowData)},
+                        data: {json: JSON.stringify(rowData)},
                         success: function (data) {
                             if (data.code == 200) {
                                 //提示
-                                $.messager.alert('提示','修改成功!');
+                                $.messager.alert('提示', '修改成功!');
                                 //刷新数据
-                                $('#book_dg').datagrid('reload',{
+                                $('#book_dg').datagrid('reload', {
                                     url: 'book/list', method: 'post'
                                 });
                             }
@@ -209,27 +217,30 @@
             }
         })
     });
+
     //条件查询
     function doSearch() {
         var keyWord = $("#keyWord").val();
         var book_category = $("#book_category").val();
         var book_press = $("#book_press").val();
         var book_position = $("#book_position").val()
-        $.post('book/search',{keyWord:keyWord,
-                            book_category:book_category,
-                            book_press:book_press,
-                            book_position:book_position
-        },function (data) {
+        $.post('book/search', {
+            keyWord: keyWord,
+            book_category: book_category,
+            book_press: book_press,
+            book_position: book_position
+        }, function (data) {
             //重新加载数据
-            $("#book_dg").datagrid("loadData",data);
+            $("#book_dg").datagrid("loadData", data);
         })
     }
+
     //清空
     function doClear() {
-        $("#keyWord").textbox().textbox("setValue","");
-        $("#book_position").textbox().textbox("setValue","");
-        $("#book_press").textbox().textbox("setValue","");
-        $("#book_category").combobox().combobox("setValue","");
+        $("#keyWord").textbox().textbox("setValue", "");
+        $("#book_position").textbox().textbox("setValue", "");
+        $("#book_press").textbox().textbox("setValue", "");
+        $("#book_category").combobox().combobox("setValue", "");
     }
 
     /*获取多行id*/

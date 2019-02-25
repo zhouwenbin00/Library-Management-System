@@ -9,6 +9,8 @@ public class TbRecord {
 
     private String bookName;
 
+    private Integer grade;
+
     private String readerName;
 
     private Date borrowDate;
@@ -47,6 +49,14 @@ public class TbRecord {
 
     public void setBookName(String bookName) {
         this.bookName = bookName == null ? null : bookName.trim();
+    }
+
+    public Integer getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Integer grade) {
+        this.grade = grade;
     }
 
     public String getReaderName() {
