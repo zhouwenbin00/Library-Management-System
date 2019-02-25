@@ -21,8 +21,14 @@
             <th data-options="width:80, field:'bookCode',align:'center',editor:'textbox'">图书编号</th>
             <th data-options="width:80, field:'bookName',align:'center',editor:'textbox'">图书名称</th>
             <th data-options="width:80, field:'author',align:'center',editor:'textbox'">作者</th>
-            <th data-options="width:80, field:'category',align:'center',editor:{type:'combobox',options:{
-                  alueField:'category',textField:'category',method:'post',url:'category/combobox' }}">分类
+            <th data-options="width:80, field:'category',align:'center',editor:{
+                                type:'combobox',options:{
+                                valueField:'category',
+                                textField:'category',
+                                method:'post',
+                                url:'category/combobox'
+                         }
+             }">分类
             </th>
             <th data-options="width:80, field:'isbn',align:'center',editor:'textbox'">ISBN</th>
             <th data-options="width:80, field:'press',align:'center',editor:'textbox'">出版社</th>

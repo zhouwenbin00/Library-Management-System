@@ -7,34 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c2cf298-9929-418c-9a12-cf7cacf5e9ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/test/lms/bean/RbReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/test/lms/bean/RbReaderExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/test/lms/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/test/lms/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/test/lms/dao/RbReaderMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/test/lms/dao/TbBookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/test/lms/dao/TbBookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/test/lms/service/BookManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/test/lms/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/test/lms/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/test/lms/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/test/lms/service/impl/BookManagerServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/test/lms/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/test/lms/service/impl/CategoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RbReaderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TbBookMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TbBookMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/addBook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/add_Book.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/json/tree_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/json/tree_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/mapper/AuthorityMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/mapper/BookMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/mapper/CategoryMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/mapper/ReaderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/mapper/RecordMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/mapper/RoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/classes/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/view/addBook.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/WEB-INF/view/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/WEB-INF/view/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test/json/tree_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/test/json/tree_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../其他资源/图书管理系统.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../其他资源/图书管理系统.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../其他资源/图书管理系统.pdm" beforeDir="false" afterPath="$PROJECT_DIR$/../其他资源/图书管理系统.pdm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/book_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/book_list.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/book_list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="158" column="8" selection-start-line="158" selection-start-column="8" selection-end-line="158" selection-end-column="8" />
+            <state relative-caret-position="85">
+              <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -251,7 +224,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-419" />
     <option name="y" value="180" />
     <option name="width" value="1102" />
@@ -640,12 +613,12 @@
       <workItem from="1551001577375" duration="14880000" />
       <workItem from="1551018153685" duration="837000" />
       <workItem from="1551058610950" duration="28879000" />
-      <workItem from="1551090621531" duration="5160000" />
+      <workItem from="1551090621531" duration="5943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137067000" />
+    <option name="totallyTimeSpent" value="137850000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1056,8 +1029,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/book_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="158" column="8" selection-start-line="158" selection-start-column="8" selection-end-line="158" selection-end-column="8" />
+        <state relative-caret-position="85">
+          <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
         </state>
       </provider>
     </entry>
