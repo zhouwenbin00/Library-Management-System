@@ -6,7 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="9c2cf298-9929-418c-9a12-cf7cacf5e9ca" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="9c2cf298-9929-418c-9a12-cf7cacf5e9ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/book_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/book_list.jsp" afterDir="false" />
+    </list>
+>>>>>>> 8b758d9faf2aad4cfedaad2e12bb620134926862
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,6 +23,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/book_list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TbBookMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="348" column="19" selection-start-line="348" selection-start-column="19" selection-end-line="348" selection-end-column="19" />
+              <folding>
+                <element signature="n#resultMap#0;n#mapper#0;n#!!top" />
+                <element signature="n#sql#0;n#mapper#0;n#!!top" />
+                <element signature="n#sql#1;n#mapper#0;n#!!top" />
+                <element signature="n#sql#2;n#mapper#0;n#!!top" />
+                <element signature="n#select#0;n#mapper#0;n#!!top" />
+                <element signature="n#select#1;n#mapper#0;n#!!top" />
+                <element signature="n#delete#0;n#mapper#0;n#!!top" />
+                <element signature="n#delete#1;n#mapper#0;n#!!top" />
+                <element signature="n#insert#0;n#mapper#0;n#!!top" />
+                <element signature="n#insert#1;n#mapper#0;n#!!top" />
+                <element signature="n#select#2;n#mapper#0;n#!!top" />
+                <element signature="n#update#0;n#mapper#0;n#!!top" />
+                <element signature="n#update#1;n#mapper#0;n#!!top" />
+                <element signature="n#update#2;n#mapper#0;n#!!top" />
+                <element signature="n#update#3;n#mapper#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/add_Book.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-75">
+              <caret line="85" column="56" selection-start-line="85" selection-start-column="47" selection-end-line="85" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> 8b758d9faf2aad4cfedaad2e12bb620134926862
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/test/lms/service/impl/RecordServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -191,10 +244,17 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
     <option name="x" value="-16" />
     <option name="y" value="4" />
     <option name="width" value="1382" />
     <option name="height" value="754" />
+=======
+    <option name="x" value="-419" />
+    <option name="y" value="180" />
+    <option name="width" value="1102" />
+    <option name="height" value="685" />
+>>>>>>> 8b758d9faf2aad4cfedaad2e12bb620134926862
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -483,15 +543,23 @@
       <workItem from="1551001577375" duration="14880000" />
       <workItem from="1551018153685" duration="837000" />
       <workItem from="1551058610950" duration="28879000" />
+<<<<<<< HEAD
       <workItem from="1551090621531" duration="14926000" />
       <workItem from="1551146415644" duration="20398000" />
       <workItem from="1551169777407" duration="19502000" />
       <workItem from="1551190219012" duration="979000" />
+=======
+      <workItem from="1551090621531" duration="5943000" />
+>>>>>>> 8b758d9faf2aad4cfedaad2e12bb620134926862
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="187712000" />
+=======
+    <option name="totallyTimeSpent" value="137850000" />
+>>>>>>> 8b758d9faf2aad4cfedaad2e12bb620134926862
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -911,8 +979,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/return_book.jsp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="66">
           <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+=======
+        <state relative-caret-position="85">
+          <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+>>>>>>> 8b758d9faf2aad4cfedaad2e12bb620134926862
         </state>
       </provider>
     </entry>
