@@ -304,73 +304,353 @@ public class TbUserExample {
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdIsNull() {
-            addCriterion("role_id is null");
+        public Criteria andBookSetIsNull() {
+            addCriterion("book_set is null");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdIsNotNull() {
-            addCriterion("role_id is not null");
+        public Criteria andBookSetIsNotNull() {
+            addCriterion("book_set is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdEqualTo(String value) {
-            addCriterion("role_id =", value, "roleId");
+        public Criteria andBookSetEqualTo(String value) {
+            addCriterion("book_set =", value, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdNotEqualTo(String value) {
-            addCriterion("role_id <>", value, "roleId");
+        public Criteria andBookSetNotEqualTo(String value) {
+            addCriterion("book_set <>", value, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdGreaterThan(String value) {
-            addCriterion("role_id >", value, "roleId");
+        public Criteria andBookSetGreaterThan(String value) {
+            addCriterion("book_set >", value, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdGreaterThanOrEqualTo(String value) {
-            addCriterion("role_id >=", value, "roleId");
+        public Criteria andBookSetGreaterThanOrEqualTo(String value) {
+            addCriterion("book_set >=", value, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdLessThan(String value) {
-            addCriterion("role_id <", value, "roleId");
+        public Criteria andBookSetLessThan(String value) {
+            addCriterion("book_set <", value, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdLessThanOrEqualTo(String value) {
-            addCriterion("role_id <=", value, "roleId");
+        public Criteria andBookSetLessThanOrEqualTo(String value) {
+            addCriterion("book_set <=", value, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdLike(String value) {
-            addCriterion("role_id like", value, "roleId");
+        public Criteria andBookSetLike(String value) {
+            addCriterion("book_set like", value, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdNotLike(String value) {
-            addCriterion("role_id not like", value, "roleId");
+        public Criteria andBookSetNotLike(String value) {
+            addCriterion("book_set not like", value, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdIn(List<String> values) {
-            addCriterion("role_id in", values, "roleId");
+        public Criteria andBookSetIn(List<String> values) {
+            addCriterion("book_set in", values, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdNotIn(List<String> values) {
-            addCriterion("role_id not in", values, "roleId");
+        public Criteria andBookSetNotIn(List<String> values) {
+            addCriterion("book_set not in", values, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdBetween(String value1, String value2) {
-            addCriterion("role_id between", value1, value2, "roleId");
+        public Criteria andBookSetBetween(String value1, String value2) {
+            addCriterion("book_set between", value1, value2, "bookSet");
             return (Criteria) this;
         }
 
-        public Criteria andRoleIdNotBetween(String value1, String value2) {
-            addCriterion("role_id not between", value1, value2, "roleId");
+        public Criteria andBookSetNotBetween(String value1, String value2) {
+            addCriterion("book_set not between", value1, value2, "bookSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetIsNull() {
+            addCriterion("reader_set is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetIsNotNull() {
+            addCriterion("reader_set is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetEqualTo(String value) {
+            addCriterion("reader_set =", value, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetNotEqualTo(String value) {
+            addCriterion("reader_set <>", value, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetGreaterThan(String value) {
+            addCriterion("reader_set >", value, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetGreaterThanOrEqualTo(String value) {
+            addCriterion("reader_set >=", value, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetLessThan(String value) {
+            addCriterion("reader_set <", value, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetLessThanOrEqualTo(String value) {
+            addCriterion("reader_set <=", value, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetLike(String value) {
+            addCriterion("reader_set like", value, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetNotLike(String value) {
+            addCriterion("reader_set not like", value, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetIn(List<String> values) {
+            addCriterion("reader_set in", values, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetNotIn(List<String> values) {
+            addCriterion("reader_set not in", values, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetBetween(String value1, String value2) {
+            addCriterion("reader_set between", value1, value2, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andReaderSetNotBetween(String value1, String value2) {
+            addCriterion("reader_set not between", value1, value2, "readerSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetIsNull() {
+            addCriterion("borrow_set is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetIsNotNull() {
+            addCriterion("borrow_set is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetEqualTo(String value) {
+            addCriterion("borrow_set =", value, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetNotEqualTo(String value) {
+            addCriterion("borrow_set <>", value, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetGreaterThan(String value) {
+            addCriterion("borrow_set >", value, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetGreaterThanOrEqualTo(String value) {
+            addCriterion("borrow_set >=", value, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetLessThan(String value) {
+            addCriterion("borrow_set <", value, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetLessThanOrEqualTo(String value) {
+            addCriterion("borrow_set <=", value, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetLike(String value) {
+            addCriterion("borrow_set like", value, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetNotLike(String value) {
+            addCriterion("borrow_set not like", value, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetIn(List<String> values) {
+            addCriterion("borrow_set in", values, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetNotIn(List<String> values) {
+            addCriterion("borrow_set not in", values, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetBetween(String value1, String value2) {
+            addCriterion("borrow_set between", value1, value2, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andBorrowSetNotBetween(String value1, String value2) {
+            addCriterion("borrow_set not between", value1, value2, "borrowSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetIsNull() {
+            addCriterion("search_set is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetIsNotNull() {
+            addCriterion("search_set is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetEqualTo(String value) {
+            addCriterion("search_set =", value, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetNotEqualTo(String value) {
+            addCriterion("search_set <>", value, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetGreaterThan(String value) {
+            addCriterion("search_set >", value, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetGreaterThanOrEqualTo(String value) {
+            addCriterion("search_set >=", value, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetLessThan(String value) {
+            addCriterion("search_set <", value, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetLessThanOrEqualTo(String value) {
+            addCriterion("search_set <=", value, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetLike(String value) {
+            addCriterion("search_set like", value, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetNotLike(String value) {
+            addCriterion("search_set not like", value, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetIn(List<String> values) {
+            addCriterion("search_set in", values, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetNotIn(List<String> values) {
+            addCriterion("search_set not in", values, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetBetween(String value1, String value2) {
+            addCriterion("search_set between", value1, value2, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSearchSetNotBetween(String value1, String value2) {
+            addCriterion("search_set not between", value1, value2, "searchSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetIsNull() {
+            addCriterion("system_set is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetIsNotNull() {
+            addCriterion("system_set is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetEqualTo(String value) {
+            addCriterion("system_set =", value, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetNotEqualTo(String value) {
+            addCriterion("system_set <>", value, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetGreaterThan(String value) {
+            addCriterion("system_set >", value, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetGreaterThanOrEqualTo(String value) {
+            addCriterion("system_set >=", value, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetLessThan(String value) {
+            addCriterion("system_set <", value, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetLessThanOrEqualTo(String value) {
+            addCriterion("system_set <=", value, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetLike(String value) {
+            addCriterion("system_set like", value, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetNotLike(String value) {
+            addCriterion("system_set not like", value, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetIn(List<String> values) {
+            addCriterion("system_set in", values, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetNotIn(List<String> values) {
+            addCriterion("system_set not in", values, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetBetween(String value1, String value2) {
+            addCriterion("system_set between", value1, value2, "systemSet");
+            return (Criteria) this;
+        }
+
+        public Criteria andSystemSetNotBetween(String value1, String value2) {
+            addCriterion("system_set not between", value1, value2, "systemSet");
             return (Criteria) this;
         }
     }

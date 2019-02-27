@@ -1,10 +1,8 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2019-02-22 20:55:00                          */
+/* Created on:     2019-02-27 18:47:34                          */
 /*==============================================================*/
 
-
-drop table if exists role;
 
 drop table if exists tb_authority;
 
@@ -12,22 +10,17 @@ drop table if exists tb_book;
 
 drop table if exists tb_category;
 
-drop table if exists tb_readers;
+drop table if exists tb_position;
+
+drop table if exists tb_press;
+
+drop table if exists tb_reader;
 
 drop table if exists tb_record;
 
-drop table if exists tb_user;
+drop table if exists tb_role;
 
-/*==============================================================*/
-/* Table: role                                                  */
-/*==============================================================*/
-create table role
-(
-   id                   integer not null,
-   role_name            varchar(10),
-   role_authority       varchar(255),
-   primary key (id)
-);
+drop table if exists tb_user;
 
 /*==============================================================*/
 /* Table: tb_authority                                          */
@@ -44,19 +37,19 @@ create table tb_authority
 /*==============================================================*/
 create table tb_book
 (
-   id                   integer not null,
+   id                   integer not null auto_increment,
    book_code            varchar(10),
    book_name            varchar(10) not null,
    ISBN                 varchar(10),
    author               varchar(10),
-   category_id          integer,
+   category             varchar(10),
    price                double,
    press                varchar(10),
    page                 integer,
    total_num            integer,
-   left_num             integer,
+   borrowe_time         integer,
    register_date        date,
-   position             varchar(10),
+   position             varchar(20),
    primary key (id)
 );
 
@@ -71,11 +64,32 @@ create table tb_category
 );
 
 /*==============================================================*/
-/* Table: tb_readers                                            */
+/* Table: tb_position                                           */
 /*==============================================================*/
-create table tb_readers
+create table tb_position
 (
-   id                   integer not null,
+   id                   integer not null auto_increment,
+   position             varchar(20),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: tb_press                                              */
+/*==============================================================*/
+create table tb_press
+(
+   id                   integer not null auto_increment,
+   press_name           varchar(10),
+   ISBN                 varchar(10),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: tb_reader                                             */
+/*==============================================================*/
+create table tb_reader
+(
+   id                   integer not null auto_increment,
    reader_name          varchar(10),
    reader_num           varchar(10),
    sex                  varchar(1),
@@ -83,7 +97,7 @@ create table tb_readers
    status               varchar(10),
    college              varchar(10),
    balance              double,
-   class                integer(10),
+   grade                integer(10),
    borrow_time          integer(10),
    register_date        date,
    validity_date        date,
@@ -95,10 +109,11 @@ create table tb_readers
 /*==============================================================*/
 create table tb_record
 (
-   id                   integer not null,
+   id                   integer not null auto_increment,
    book_num             varchar(10),
    book_name            varchar(10),
    reader_name          varchar(10),
+   grader               integer,
    borrow_date          date,
    return_date          date,
    status               varchar(10),
@@ -110,14 +125,29 @@ create table tb_record
 );
 
 /*==============================================================*/
+/* Table: tb_role                                               */
+/*==============================================================*/
+create table tb_role
+(
+   id                   integer not null auto_increment,
+   role_name            varchar(10),
+   role_authority       varchar(255),
+   primary key (id)
+);
+
+/*==============================================================*/
 /* Table: tb_user                                               */
 /*==============================================================*/
 create table tb_user
 (
-   id                   integer not null,
+   id                   integer not null auto_increment,
    username             varchar(10) not null,
    password             varchar(10) not null,
-   role_id              varchar(10),
+   book_set             varchar(10),
+   reader_set           varchar(10),
+   borrow_set           varchar(10),
+   search_set           varchar(10),
+   system_set           varchar(10),
    primary key (id)
 );
 

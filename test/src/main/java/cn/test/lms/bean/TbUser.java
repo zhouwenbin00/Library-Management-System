@@ -7,7 +7,15 @@ public class TbUser {
 
     private String password;
 
-    private String roleId;
+    private String bookSet;
+
+    private String readerSet;
+
+    private String borrowSet;
+
+    private String searchSet;
+
+    private String systemSet;
 
     public Integer getId() {
         return id;
@@ -33,11 +41,43 @@ public class TbUser {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getRoleId() {
-        return roleId;
+    public String getBookSet() {
+        return bookSet;
     }
 
-    public void setRoleId(String roleId) {
-        this.roleId = roleId == null ? null : roleId.trim();
+    public void setBookSet(String bookSet) {
+        this.bookSet = bookSet == null ? null : bookSet.trim();
+    }
+
+    public String getReaderSet() {
+        return readerSet;
+    }
+
+    public void setReaderSet(String readerSet) {
+        this.readerSet = readerSet == null ? null : readerSet.trim();
+    }
+
+    public String getBorrowSet() {
+        return borrowSet;
+    }
+
+    public void setBorrowSet(String borrowSet) {
+        this.borrowSet = borrowSet == null ? null : borrowSet.trim();
+    }
+
+    public String getSearchSet() {
+        return searchSet;
+    }
+
+    public void setSearchSet(String searchSet) {
+        this.searchSet = searchSet == null ? null : searchSet.trim();
+    }
+
+    public String getSystemSet() {
+        return systemSet;
+    }
+
+    public void setSystemSet(String systemSet) {
+        this.systemSet = systemSet == null ? null : systemSet.trim();
     }
 }

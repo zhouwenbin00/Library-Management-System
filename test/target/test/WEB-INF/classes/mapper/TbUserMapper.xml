@@ -5,7 +5,11 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="role_id" jdbcType="VARCHAR" property="roleId" />
+    <result column="book_set" jdbcType="VARCHAR" property="bookSet" />
+    <result column="reader_set" jdbcType="VARCHAR" property="readerSet" />
+    <result column="borrow_set" jdbcType="VARCHAR" property="borrowSet" />
+    <result column="search_set" jdbcType="VARCHAR" property="searchSet" />
+    <result column="system_set" jdbcType="VARCHAR" property="systemSet" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -66,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, username, password, role_id
+    id, username, password, book_set, reader_set, borrow_set, search_set, system_set
   </sql>
   <select id="selectByExample" parameterType="cn.test.lms.bean.TbUserExample" resultMap="BaseResultMap">
     select
@@ -100,9 +104,11 @@
   </delete>
   <insert id="insert" parameterType="cn.test.lms.bean.TbUser">
     insert into tb_user (id, username, password, 
-      role_id)
+      book_set, reader_set, borrow_set, 
+      search_set, system_set)
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{roleId,jdbcType=VARCHAR})
+      #{bookSet,jdbcType=VARCHAR}, #{readerSet,jdbcType=VARCHAR}, #{borrowSet,jdbcType=VARCHAR}, 
+      #{searchSet,jdbcType=VARCHAR}, #{systemSet,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.test.lms.bean.TbUser">
     insert into tb_user
@@ -116,8 +122,20 @@
       <if test="password != null">
         password,
       </if>
-      <if test="roleId != null">
-        role_id,
+      <if test="bookSet != null">
+        book_set,
+      </if>
+      <if test="readerSet != null">
+        reader_set,
+      </if>
+      <if test="borrowSet != null">
+        borrow_set,
+      </if>
+      <if test="searchSet != null">
+        search_set,
+      </if>
+      <if test="systemSet != null">
+        system_set,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -130,8 +148,20 @@
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="roleId != null">
-        #{roleId,jdbcType=VARCHAR},
+      <if test="bookSet != null">
+        #{bookSet,jdbcType=VARCHAR},
+      </if>
+      <if test="readerSet != null">
+        #{readerSet,jdbcType=VARCHAR},
+      </if>
+      <if test="borrowSet != null">
+        #{borrowSet,jdbcType=VARCHAR},
+      </if>
+      <if test="searchSet != null">
+        #{searchSet,jdbcType=VARCHAR},
+      </if>
+      <if test="systemSet != null">
+        #{systemSet,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -153,8 +183,20 @@
       <if test="record.password != null">
         password = #{record.password,jdbcType=VARCHAR},
       </if>
-      <if test="record.roleId != null">
-        role_id = #{record.roleId,jdbcType=VARCHAR},
+      <if test="record.bookSet != null">
+        book_set = #{record.bookSet,jdbcType=VARCHAR},
+      </if>
+      <if test="record.readerSet != null">
+        reader_set = #{record.readerSet,jdbcType=VARCHAR},
+      </if>
+      <if test="record.borrowSet != null">
+        borrow_set = #{record.borrowSet,jdbcType=VARCHAR},
+      </if>
+      <if test="record.searchSet != null">
+        search_set = #{record.searchSet,jdbcType=VARCHAR},
+      </if>
+      <if test="record.systemSet != null">
+        system_set = #{record.systemSet,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -166,7 +208,11 @@
     set id = #{record.id,jdbcType=INTEGER},
       username = #{record.username,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
-      role_id = #{record.roleId,jdbcType=VARCHAR}
+      book_set = #{record.bookSet,jdbcType=VARCHAR},
+      reader_set = #{record.readerSet,jdbcType=VARCHAR},
+      borrow_set = #{record.borrowSet,jdbcType=VARCHAR},
+      search_set = #{record.searchSet,jdbcType=VARCHAR},
+      system_set = #{record.systemSet,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -180,8 +226,20 @@
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="roleId != null">
-        role_id = #{roleId,jdbcType=VARCHAR},
+      <if test="bookSet != null">
+        book_set = #{bookSet,jdbcType=VARCHAR},
+      </if>
+      <if test="readerSet != null">
+        reader_set = #{readerSet,jdbcType=VARCHAR},
+      </if>
+      <if test="borrowSet != null">
+        borrow_set = #{borrowSet,jdbcType=VARCHAR},
+      </if>
+      <if test="searchSet != null">
+        search_set = #{searchSet,jdbcType=VARCHAR},
+      </if>
+      <if test="systemSet != null">
+        system_set = #{systemSet,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -190,7 +248,11 @@
     update tb_user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      role_id = #{roleId,jdbcType=VARCHAR}
+      book_set = #{bookSet,jdbcType=VARCHAR},
+      reader_set = #{readerSet,jdbcType=VARCHAR},
+      borrow_set = #{borrowSet,jdbcType=VARCHAR},
+      search_set = #{searchSet,jdbcType=VARCHAR},
+      system_set = #{systemSet,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

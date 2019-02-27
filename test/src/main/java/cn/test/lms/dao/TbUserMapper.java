@@ -2,8 +2,9 @@ package cn.test.lms.dao;
 
 import cn.test.lms.bean.TbUser;
 import cn.test.lms.bean.TbUserExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface TbUserMapper {
     long countByExample(TbUserExample example);

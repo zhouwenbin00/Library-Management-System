@@ -15,7 +15,7 @@
             http://www.springframework.org/schema/tx
             http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
             http://www.springframework.org/schema/mvc
-            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+            http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
@@ -35,9 +35,32 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
+    <!-- 配置静态资源映射  -->
+    <!-- 指定/WEB-INF/js   /WEB-INF/css/  下的所有的静态资源包括子目录下的静态资源  都不被拦截-->
+    <!--  mapping=/js/**  :表示访问静态资源的路径的形式    可以访问 /js/下的静态资源或者所有的子目录下的静态资源-->
+    <mvc:resources location="js/" mapping="/js/**"/>
+    <mvc:resources location="css/" mapping="/css/**"/>
+    <mvc:resources location="images/" mapping="/images/**"/>
+
     <!--两个标准配置-->
     <!--将springMvc不能处理的请求交给tomcat-->
     <mvc:default-servlet-handler />
     <!--能支持springMvc更高级的功能，JSR303校验，快捷的ajax请求，映射动态请求-->
     <mvc:annotation-driven />
+
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 拦截所有mvc控制器 -->
+            <mvc:mapping path="/**"/>
+            <!-- mvc:exclude-mapping是另外一种拦截，它可以在你后来的测试中对某个页面进行不拦截，这样就不用在
+                LoginInterceptor的preHandler方法里面获取不拦截的请求uri地址了(优选) -->
+            <mvc:exclude-mapping path="/login" />
+            <mvc:exclude-mapping path="/toLogin" />
+            <mvc:exclude-mapping path="/js/**" />
+            <mvc:exclude-mapping path="/css/**" />
+            <mvc:exclude-mapping path="/images/**" />
+            <bean class="cn.test.lms.Interceptor.PermissionInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

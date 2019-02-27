@@ -27,7 +27,7 @@
         <div style="position: absolute;left: 10px;padding: auto 0px"><h1>图书管理系统</h1></div>
         <!--登陆用户-->
         <div style="position:absolute;bottom: 0;right: 10px; ">
-            <span>admin</span>：您好！<a href="#">安全退出</a>
+            <span>${user.username}</span>：您好！<a href="outLogin">安全退出</a>
         </div>
     </div>
     <!--西-->

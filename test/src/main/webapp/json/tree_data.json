@@ -95,7 +95,7 @@
       {
         "id": 51,
         "text": "操作员管理",
-        "attributes": {"url": "admin_set.html"}
+        "attributes": {"url": "admin_list"}
       },
       {
         "id": 53,
