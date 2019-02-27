@@ -18,3 +18,12 @@
 ### 借阅记录界面
 
 ![image](https://github.com/zhouwenbin00/Library-Management-System/blob/master/%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90/2019-02-26_221118.png)
+
+### 登陆界面
+![image](https://github.com/zhouwenbin00/Library-Management-System/blob/master/%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90/2019-02-27_184805.png)
+
+### 访问受阻界面
+![image](https://github.com/zhouwenbin00/Library-Management-System/blob/master/%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90/2019-02-27_184844.png)
+
+### 权限管理界面
+![image](https://github.com/zhouwenbin00/Library-Management-System/blob/master/%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90/2019-02-27_184824.png)
